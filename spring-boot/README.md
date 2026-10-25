@@ -57,7 +57,9 @@ The `entity` package contains `Product`, `Location`, `InventoryBalance`, `StockM
 
 ## Configuration
 
-Application settings are in `src/main/resources/application.properties`. Override the port with `SERVER_PORT` when needed:
+Application defaults are in `src/main/resources/application.properties`; local overrides are in `.env`. The port defaults to `8022` and the application name to `demo` when their environment values are absent.
+
+Override the port in `.env` with `SERVER_PORT`:
 
 ```bash
 SERVER_PORT=8080 ./mvnw spring-boot:run
