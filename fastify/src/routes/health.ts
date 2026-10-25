@@ -1,5 +1,4 @@
 import type { FastifyInstance, FastifyPluginAsync } from 'fastify'
-import { request } from 'node:http';
 
 
 const healthRoutes: FastifyPluginAsync = async (app: FastifyInstance) => {

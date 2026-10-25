@@ -51,7 +51,10 @@ export const AnyNull = runtime.AnyNull
 
 
 export const ModelName = {
-  Task: 'Task'
+  Product: 'Product',
+  Location: 'Location',
+  InventoryBalance: 'InventoryBalance',
+  StockMovement: 'StockMovement'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -70,14 +73,52 @@ export const TransactionIsolationLevel = runtime.makeStrictEnum({
 export type TransactionIsolationLevel = (typeof TransactionIsolationLevel)[keyof typeof TransactionIsolationLevel]
 
 
-export const TaskScalarFieldEnum = {
+export const ProductScalarFieldEnum = {
   id: 'id',
-  title: 'title',
+  sku: 'sku',
+  name: 'name',
+  description: 'description',
+  unit: 'unit',
+  active: 'active',
   createdAt: 'createdAt',
-  processedAt: 'processedAt'
+  updatedAt: 'updatedAt'
 } as const
 
-export type TaskScalarFieldEnum = (typeof TaskScalarFieldEnum)[keyof typeof TaskScalarFieldEnum]
+export type ProductScalarFieldEnum = (typeof ProductScalarFieldEnum)[keyof typeof ProductScalarFieldEnum]
+
+
+export const LocationScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  createdAt: 'createdAt'
+} as const
+
+export type LocationScalarFieldEnum = (typeof LocationScalarFieldEnum)[keyof typeof LocationScalarFieldEnum]
+
+
+export const InventoryBalanceScalarFieldEnum = {
+  id: 'id',
+  productId: 'productId',
+  locationId: 'locationId',
+  quantity: 'quantity',
+  updatedAt: 'updatedAt'
+} as const
+
+export type InventoryBalanceScalarFieldEnum = (typeof InventoryBalanceScalarFieldEnum)[keyof typeof InventoryBalanceScalarFieldEnum]
+
+
+export const StockMovementScalarFieldEnum = {
+  id: 'id',
+  productId: 'productId',
+  locationId: 'locationId',
+  type: 'type',
+  quantity: 'quantity',
+  note: 'note',
+  reference: 'reference',
+  createdAt: 'createdAt'
+} as const
+
+export type StockMovementScalarFieldEnum = (typeof StockMovementScalarFieldEnum)[keyof typeof StockMovementScalarFieldEnum]
 
 
 export const SortOrder = {

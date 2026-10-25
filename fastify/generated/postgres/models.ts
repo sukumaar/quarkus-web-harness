@@ -8,5 +8,8 @@
  *
  * 🟢 You can import this file directly.
  */
-export type * from './models/Task.ts'
+export type * from './models/Product.ts'
+export type * from './models/Location.ts'
+export type * from './models/InventoryBalance.ts'
+export type * from './models/StockMovement.ts'
 export type * from './commonInputTypes.ts'
