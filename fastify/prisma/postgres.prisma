@@ -27,6 +27,7 @@ model Product {
   movements   StockMovement[]
   createdAt   DateTime           @default(now())
   updatedAt   DateTime           @updatedAt
+  @@map("product")
 }
 
 model Location {
@@ -35,6 +36,7 @@ model Location {
   balances  InventoryBalance[]
   movements StockMovement[]
   createdAt DateTime           @default(now())
+  @@map("location")
 }
 
 model InventoryBalance {
@@ -47,6 +49,7 @@ model InventoryBalance {
   updatedAt  DateTime @updatedAt
 
   @@unique([productId, locationId])
+  @@map("inventory_balance")
 }
 
 model StockMovement {
@@ -62,4 +65,5 @@ model StockMovement {
   createdAt  DateTime     @default(now())
 
   @@index([productId, locationId, createdAt])
+  @@map("stock_movement")
 }
